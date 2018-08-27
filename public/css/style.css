@@ -1,0 +1,35 @@
+body, html {
+    height: 100%;
+
+}
+.bg {
+    /* The image used */
+    background-image: url("/img/Background.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+#par { 
+  font-size: 20pt;
+  text-shadow: 2px 2px 6px #000000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .holder{
+    margin: 0 auto;
+    overflow:hidden;
+    height:60%;
+    color: azure;
+  }
+
+  .glyphicon {
+    font-size: 60px;
+}
