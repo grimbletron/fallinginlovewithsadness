@@ -1,6 +1,6 @@
 module.exports={
 //show the homepage
     showHome: (req,res)=>{
-        res.render('pages/home');
+        res.render('pages/confessions');
     }
 }

@@ -23,7 +23,7 @@ function showConfessions(req, res) {
     }
 
     // return a view with data
-    res.render('pages/confessions', { 
+    res.render('pages/events', { 
         confessions: confessions,
         success: req.flash('success')
      });
@@ -89,7 +89,6 @@ function showCreate(req, res) {
  */
 function processCreate(req, res) {
     //validate info
-    req.checkBody('name', 'Name is required').notEmpty();
     req.checkBody('confession', 'confession is required').notEmpty();
 
     //if there are errors, redirect and save errors to flash
@@ -102,7 +101,6 @@ function processCreate(req, res) {
 
     // create a new confession
     const confession = new Confession({
-    name: req.body.name,
     confession: req.body.confession
     });
 
