@@ -2,9 +2,8 @@ const Confession = require('../models/confession');
 
 module.exports = {
   showConfessions: showConfessions,
-  showSingle: showSingle,
+  editConfessions: editConfessions,
   seedConfessions: seedConfessions,
-  showCreate: showCreate,
   processCreate: processCreate,
   showEdit: showEdit,
   processEdit: processEdit,
@@ -23,7 +22,7 @@ function showConfessions(req, res) {
     }
 
     // return a view with data
-    res.render('pages/events', { 
+    res.render('pages/confessions', { 
         confessions: confessions,
         success: req.flash('success')
      });
@@ -31,22 +30,25 @@ function showConfessions(req, res) {
 }
 
 /**
- * Show a single confession
+ * Show all confessions
  */
-function showSingle(req, res) {
-  // get a single confession
-  Confession.findOne({ slug: req.params.slug }, (err, confession) => {
+function editConfessions(req, res) {
+  // get all confessions   
+  Confession.find({}, (err, confessions) => {
     if (err) {
       res.status(404);
-      res.send('Confession not found!');
+      res.send('Confessions not found!');
     }
 
-    res.render('pages/single', { 
-        confession: confession,
-        success: req.flash('success') 
-    });
+    // return a view with data
+    res.render('pages/editConfessions', { 
+        layout: 'layout edit',
+        confessions: confessions,
+        success: req.flash('success')
+     });
   });
 }
+
 
 /**
  * Seed the database
@@ -75,14 +77,6 @@ function seedConfessions(req, res) {
   res.send('Database seeded!');
 }
 
-/**
- * Show the create form
- */
-function showCreate(req, res) {
-    res.render('pages/create', {
-        errors: req.flash('errors')
-    });
-}
 
 /**
  * Process the creation form
@@ -95,7 +89,7 @@ function processCreate(req, res) {
     const errors = req.validationErrors();
     if(errors){
         req.flash('errors', errors.map(err => err.msg));
-        return res.redirect('/confessions/create');
+        return res.redirect('/');
     }
 
 
@@ -112,7 +106,7 @@ function processCreate(req, res) {
     req.flash('success', 'Successfully created confession');
 
     // redirect to the newly created confession
-    res.redirect(`/confessions/${confession.slug}`);
+    res.redirect(`/`);
     });
 }
 
@@ -132,7 +126,6 @@ function showEdit(req, res) {
  * process the edit form 
  */
 function processEdit(req, res){
-    req.checkBody('name', 'Name is required').notEmpty();
     req.checkBody('confession', 'confession is required').notEmpty();
 
     //if there are errors, redirect and save errors to flash
@@ -159,8 +152,8 @@ function processEdit(req, res){
  * delete an confession
  */
 function deleteConfession(req,res) {
-    Confession.remove({ slug: req.params.slug }, (err)=>{
+    Confession.remove({ _id: req.params.id }, (err)=>{
         req.flash('success', 'Confession deleted');
-        res.redirect('/confessions');
+        res.redirect('/edit');
     });
 }

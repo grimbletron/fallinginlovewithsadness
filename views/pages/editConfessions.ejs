@@ -1,0 +1,26 @@
+<% if (success.length > 0) { %>
+    <div class="alert alert-success"><%= success %></div>
+<% } %>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>content</th>
+            <th>moderated?</th>
+            
+        </tr>
+    </thead>
+    <tbody></tbody>
+        <% for (var confession of confessions) { %>
+            <tr>
+            <td><%= confession.confession %></td>
+            
+            <td><input type="checkbox" value=<%= confession.moderated %>></td>
+                <a href="/confessions/<%= confession.id %>/edit" class="btn btn-small btn-primary">edit</a>
+                <a href="/confessions/<%= confession.id %>/delete" class="btn btn-small btn-danger">delete</a>
+            </td>
+        </tr>
+        <% } %>
+
+    </tbody>
+</table>
