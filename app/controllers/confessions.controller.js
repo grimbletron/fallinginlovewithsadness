@@ -7,7 +7,10 @@ module.exports = {
   processCreate: processCreate,
   showEdit: showEdit,
   processEdit: processEdit,
-  deleteConfession: deleteConfession
+  deleteConfession: deleteConfession,
+  moderateConfession: moderateConfession,
+  unmoderateConfession: unmoderateConfession,
+  showModerated: showModerated
 }
 
 /**
@@ -15,7 +18,7 @@ module.exports = {
  */
 function showConfessions(req, res) {
   // get all confessions   
-  Confession.find({}, (err, confessions) => {
+  Confession.find({ moderated: true}, (err, confessions) => {
     if (err) {
       res.status(404);
       res.send('Confessions not found!');
@@ -34,7 +37,7 @@ function showConfessions(req, res) {
  */
 function editConfessions(req, res) {
   // get all confessions   
-  Confession.find({}, (err, confessions) => {
+  Confession.find({moderated: false}, (err, confessions) => {
     if (err) {
       res.status(404);
       res.send('Confessions not found!');
@@ -49,6 +52,22 @@ function editConfessions(req, res) {
   });
 }
 
+function showModerated(req, res) {
+  // get all confessions   
+  Confession.find({moderated: true}, (err, confessions) => {
+    if (err) {
+      res.status(404);
+      res.send('Confessions not found!');
+    }
+
+    // return a view with data
+    res.render('pages/editModerated', { 
+        layout: 'layout edit',
+        confessions: confessions,
+        success: req.flash('success')
+     });
+  });
+}
 
 /**
  * Seed the database
@@ -156,4 +175,22 @@ function deleteConfession(req,res) {
         req.flash('success', 'Confession deleted');
         res.redirect('/edit');
     });
+}
+
+/**
+ * moderate a confession
+ */
+function moderateConfession(req,res) {
+  Confession.findByIdAndUpdate({ _id: req.params.id },  {moderated: true}, (err)=>{
+  req.flash('success', 'Confession moderated');
+  res.redirect('/edit');
+  });
+}
+
+
+function unmoderateConfession(req,res) {
+  Confession.findByIdAndUpdate({ _id: req.params.id },  {moderated: false}, (err)=>{
+  req.flash('success', 'Confession unmoderated');
+  res.redirect('/moderated');
+  });
 }

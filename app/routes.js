@@ -11,15 +11,18 @@ router.get('/', confessionsController.showConfessions);
 
 //event routes
 router.get('/edit',  confessionsController.editConfessions);
+router.get('/moderated',  confessionsController.showModerated);
 //seed confessions
 router.get('/confessions/seed',  confessionsController.seedConfessions);
 
 //create confessions
-router.post('/confessions/create', confessionsController.processCreate);
+router.post('/create', confessionsController.processCreate);
 
 //edit confessions
 router.get('/edit',    confessionsController.showEdit);
-router.post('/confessions/:id',        confessionsController.processEdit);
+router.post('/:id',        confessionsController.processEdit);
 
 //delete confessions
-router.get('/confessions/:id/delete', confessionsController.deleteConfession);
+router.get('/:id/delete', confessionsController.deleteConfession);
+router.get('/:id/moderate', confessionsController.moderateConfession);
+router.get('/:id/unmoderate', confessionsController.unmoderateConfession);
