@@ -1,52 +1,44 @@
 body, html {
-    
-    background-color: #ebe5e3;
-    height: 100%;
-    background-image: url("/img/Background.jpg");
 
+    background-color: black;
+
+    background-image: url("/img/Background.jpg");
+    max-height: 100vh;
     /* Full height */
 
     /* Center and scale the image nicely */
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
+    text-align: center;
+
 
 
 }
-.bg {
-    /* The image used */
-  
+
+@font-face {
+  font-family: helsinki;
+  src: url(/helsinki.ttf);
 }
 
-
-ul {
-    display: inline-block;
-}
 
 #par { 
   font-size: 20pt;
   text-shadow: 2px 2px 6px #000000;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
   }
 
+
 .holder{
+  font-family: helsinki;
   margin: 0 auto;
-  overflow:hidden;
-  height:50vh;
+  overflow: hidden;
+  height: 170vh;
+  width: 85%;
   color: azure;
+
 }
 
-
-.glyphicon {
-  font-size: 60px;
-}
-
-.redbutton {
-  background-color: #ff0000;
-  color: white;
-  padding: 30px;
-  font-size: 16px;
-  border: none;
-  border-radius: 50%;
-
+body.modal-open {
+  overflow: visible;
 }
