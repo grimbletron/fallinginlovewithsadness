@@ -52,6 +52,8 @@ function editConfessions(req, res) {
   });
 }
 
+
+
 function showModerated(req, res) {
   // get all confessions   
   Confession.find({moderated: true}, (err, confessions) => {
@@ -133,9 +135,10 @@ function processCreate(req, res) {
  * show the edit form
  */
 function showEdit(req, res) {
-    Confession.findOne({ slug: req.params.slug }, (err, confession) => {
+    Confession.findOne({ _id: req.params.id }, (err, confession) => {
       res.render('pages/edit', {
         confession: confession,
+        layout: 'layout edit',
         errors: req.flash('errors')
       });
     });
@@ -154,15 +157,14 @@ function processEdit(req, res){
         return res.redirect(`/confessions/${req.params.slug}/edit`);
     }
     //finding a current confession
-    Confession.findOne({ slug: req.params.slug }, (err, confession)=>{
-        confession.name = req.body.name;
+    Confession.findOne({ _id: req.params.id }, (err, confession)=>{
         confession.confession = req.body.confession;
         confession.save((err)=>{
             if (err)
                 throw err;
 
         req.flash('success', 'successfully updated confession');
-        res.redirect('/confessions');
+        res.redirect('/edit');
         });
     });
 }

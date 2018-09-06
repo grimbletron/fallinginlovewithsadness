@@ -16,21 +16,16 @@ body, html {
 
 }
 
-@font-face {
-  font-family: helsinki;
-  src: url(/helsinki.ttf);
-}
-
 
 #par { 
-  font-size: 20pt;
+  font-size: 24pt;
   text-shadow: 2px 2px 6px #000000;
 
   }
 
 
 .holder{
-  font-family: helsinki;
+  font-family: 'Pragati Narrow';
   margin: 0 auto;
   overflow: hidden;
   height: 170vh;

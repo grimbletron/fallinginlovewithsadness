@@ -3,13 +3,7 @@
 <% } %>
 
 <table class="table table-bordered table-hover" style="background-color: #4CAF50; color: black">
-    <thead>
-        <tr>
-            <th>content</th>
-            <th>moderated?</th>
-            
-        </tr>
-    </thead>
+
     <tbody></tbody>
         <% for (var confession of confessions) { %>
             <tr>
@@ -17,6 +11,7 @@
             
             <td>
                 <a href="/<%= confession.id %>/moderate" class="btn btn-small btn-primary">moderate</a>
+                <a href="/edit/<%= confession.id %>" class="btn btn-small btn-primary">edit</a>
                 <a href="/<%= confession.id %>/delete" class="btn btn-small btn-danger">delete</a>
             </td>
         </tr>

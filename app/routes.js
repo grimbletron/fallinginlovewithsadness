@@ -19,8 +19,8 @@ router.get('/confessions/seed',  confessionsController.seedConfessions);
 router.post('/create', confessionsController.processCreate);
 
 //edit confessions
-router.get('/edit',    confessionsController.showEdit);
-router.post('/:id',        confessionsController.processEdit);
+router.get('/edit/:id',    confessionsController.showEdit);
+router.post('/edit/:id',        confessionsController.processEdit);
 
 //delete confessions
 router.get('/:id/delete', confessionsController.deleteConfession);
