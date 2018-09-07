@@ -1,9 +1,12 @@
-var go = function(){
+$(document).ready(function(){
 		var top=0;
-		var par = document.getElementById('par')
+        var inc=1;
+        var par = document.getElementById('par')
+        $('#par').hover(function(){inc = 0},function(){ inc=1});
 		var scroll = function() {
- 
-            top++;
+            top+=inc;
+            
+
 			if( top>=par.firstElementChild.offsetHeight )
 			{
 			//first element is out of sight, so move to the end of the list
@@ -18,7 +21,4 @@ var go = function(){
 			setTimeout(scroll, 25)
 		}
 		scroll();
-        }
-        
-
-go()
+        });

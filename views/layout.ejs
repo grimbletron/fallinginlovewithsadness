@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Pragati Narrow' rel='stylesheet'>
+
 
 	<link rel="stylesheet" href="css/style.css">
 	
@@ -16,155 +16,157 @@
 
 <body>
 		<main>
-		<div class="holder">
-				<%- body %>
+		<div class="bg">
+			<!-- Scrolling Text -->
+			<div class="holder">
+					<%- body %>
+				</div>
+		<br>
+		<br>
+			<!-- Images and Buttons -->
+			<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-6" align="right">
+							<img src="/img/write.png" id="myBtn"></img>
+						</div>
+						<div class="col-xs-6" align="left">
+								<img src="/img/preorder.png" onclick="window.open('http://smarturl.it/EMKCD04')"></img>
+						</div>
+					</div>
+					<br>
+					<br>
+					<div class="row">
+						<div class="col-xs-4" align="right">
+								<img src="/img/EmikaRecordsWhite.png" class="img-fluid" alt="">
+						</div>
+						<div class="col-xs-4">
+								<img src="/img/Heart.png" class="img-fluid" alt="">
+						</div>
+						<div class="col-xs-4" align="left">
+								<img src="/img/HMLogo.png" class="img-fluid" alt="">
+						</div>
+					</div>
+			</div>
+			<br>
+			<br>
+			<br>
 		</div>
-				<br>
-				<br>
-
-		<div class="container-fluid">
-				<div class="row">
-					<div class="col-xs-6" align="right">
-						<img src="/img/write.png" id="myBtn"></img>
-					</div>
-					<div class="col-xs-6" align="left">
-							<img src="/img/preorder.png" onclick="window.open('http://smarturl.it/EMKCD04')"></img>
-					</div>
-				</div>
-				<br>
-				<br>
-				<div class="row">
-					<div class="col-xs-4" align="right">
-							<img src="/img/EmikaRecordsWhite.png" class="img-fluid" alt="">
-					</div>
-					<div class="col-xs-4">
-							<img src="/img/Heart.png" class="img-fluid" alt="">
-					</div>
-					<div class="col-xs-4" align="left">
-							<img src="/img/HMLogo.png" class="img-fluid" alt="">
-					</div>
-				</div>
-			</div>
-		
-<div class="modal fade" id="myModal" role="dialog">
-<div class="modal-dialog">
-
-<!-- Modal content-->
-<div class="modal-content">
-
-<div class="modal-body" style="padding:5px 5px;">
-	<button type="button" class="close" data-dismiss="modal">&times;</button>
-	<form action="/create" method="POST">
-
-			<div class="form-group">
-					<textarea name="confession" rows="10" class="form-control" placeholder="What does the word 'Depression' mean to you?"></textarea>
-			</div>
-
-			<div class="form-group">
-			<button type="submit" class="btn btn-success btn-lg">Submit</button>
-			</div>
-
-	</form>
-</div>
-</div>
-
-</div>
-</div> 
-
-
-
-<script src="/js/scroll.js"></script>
-
-<script>
-			$(document).ready(function(){
-					$("#myBtn").click(function(){
-							$("#myModal").modal({backdrop: 'static'});
-					});
-			});
-</script>
-
 
 			
-<script>
-		pos = $(window).height();
-		$('html, body').animate({scrollTop:pos}, "slow");
-		</script>	
-		
+			<!-- Data Entry -->
+			<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+			<div class="modal-content">
 
+			<div class="modal-body" style="padding:5px 5px;">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<form action="/create" method="POST">
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+						<div class="form-group">
+								<textarea name="confession" rows="10" class="form-control" placeholder="What does the word 'Depression' mean to you?"></textarea>
+						</div>
 
-<div align=center class="existing-site">
-	<section>
-<iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=3814841846/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/melanfonie-2"&gt;Melanfonie by EMIKA&lt;/a&gt;</iframe>
+						<div class="form-group">
+						<button type="submit" class="btn btn-success btn-lg">Submit</button>
+						</div>
 
-
-<iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=2750084397/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/melanfonie-momente"&gt;Melanfonie Momente by EMIKA&lt;/a&gt;</iframe>
-
-
-<br><br>
-
-
-
-<iframe style="border: 0; width: 233px; height: 233px;" src="https://bandcamp.com/EmbeddedPlayer/album=552256780/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/flashbacks"&gt;Flashbacks by EMIKA&lt;/a&gt;</iframe>
-
-<iframe style="border: 0; width: 233px; height: 233px;" src="https://bandcamp.com/EmbeddedPlayer/album=539305556/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/drei"&gt;DREI by EMIKA&lt;/a&gt;</iframe>
-
-<iframe style="border: 0; width: 233px; height: 233px;" src="https://bandcamp.com/EmbeddedPlayer/album=2485336970/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/klavirni"&gt;Klavirni by EMIKA&lt;/a&gt;</iframe>
-
-<br><br>
-
-
-<iframe style="border: 0; width: 233px; height: 233px;" src="https://bandcamp.com/EmbeddedPlayer/album=3634596170/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/forever-never"&gt;Forever Never by EMIKA&lt;/a&gt;</iframe>
-
-
-<iframe style="border: 0; width: 233px; height: 233px;" src="https://bandcamp.com/EmbeddedPlayer/album=2770821517/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/melancholia-euphoria"&gt;Melancholia Euphoria by EMIKA&lt;/a&gt;</iframe>
-
-<iframe style="border: 0; width: 233px; height: 233px;" src="http://bandcamp.com/EmbeddedPlayer/album=635676891/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/drei-remixes"&gt;DREI - Remixes by EMIKA&lt;/a&gt;</iframe>
-
-<br><br>
-
-<iframe src="https://embed.spotify.com/?uri=https://open.spotify.com/user/emikamusic/playlist/5HxXr2e31Q0Sp9jjIbzHEx?si=81DP-4BORNWYTrveHkrr8g" allowtransparency="true" width="350" height="350" frameborder="0"></iframe>
-
-<iframe src="https://embed.spotify.com/?uri=https://open.spotify.com/user/emikamusic/playlist/6nkuDYjp9VChyyzfyR3qW3?si=KD1tUXVdTi-cviBaGwgc6A" allowtransparency="true" width="350" height="350" frameborder="0"></iframe>
-
-<br>
-		</section>
-
-		<article>
-
-			<br><div style="font-family: 'Josefin Sans', sans serif;"><a href="http://www.srd.co.uk/">Distributed by SRD</a></div>
-			<br>
-			<br>
-			<div class="links">
-			<div id="main">
-		<a href="http://www.facebook.com/emikamusic" title="Facebook" target="_blank"><img src="EMIKA%20RECORDS_files/facebook.png"></a>
-
-                <a href="http://www.soundcloud.com/emika_official" title="Soundcloud" target="_blank"><img src="EMIKA%20RECORDS_files/soundcloud.png"></a>
-
-                <a href="https://youtu.be/umy5HK5loig" title="YouTube" target="_blank"><img src="EMIKA%20RECORDS_files/youtube.png"></a>
-
-                <a href="http://twitter.com/emika_official" title="Twitter" target="_blank"><img src="EMIKA%20RECORDS_files/twitter.png"></a>
-
-                <a href="https://instagram.com/emika_official/" title="Instagram" target="_blank"><img src="EMIKA%20RECORDS_files/instagram.png"></a>
-
-                <a href="mailto:mail@emikarecords.com" title="Mail"><img src="EMIKA%20RECORDS_files/email.png"></a>
-
-
-               
-                	<span class="stretch"></span>
+				</form>
 			</div>
 			</div>
-		</article> 
-	
 
-<div id="simple-translate-button" style="display: none;"></div><div id="simple-translate-panel" style="display: none;"><p>...</p></div>
-</div>
-</main>
+			</div>
+			</div> 
+
+			<!-- Autoscroll -->
+			<script src="/js/scroll.js"></script>
+
+			<!-- Welcome Message -->
+			<script>
+						$(document).ready(function(){
+								$("#myBtn").click(function(){
+										$("#myModal").modal({backdrop: 'static'});
+								});
+						});
+			</script>
+
+			<!-- Page Load Position -->						
+			<script>
+					pos = $(window).height();
+					$('html, body').animate({scrollTop:pos}, "slow");
+			</script>		
+
+
+			<br>
+			<br>
+			<br>
+
+			<!-- Previous Content -->
+			<div align=center class="existing-site">
+				<section>
+			<iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=3814841846/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/melanfonie-2"&gt;Melanfonie by EMIKA&lt;/a&gt;</iframe>
+
+
+			<iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=2750084397/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/melanfonie-momente"&gt;Melanfonie Momente by EMIKA&lt;/a&gt;</iframe>
+
+
+			<br><br>
+
+
+
+			<iframe style="border: 0; width: 233px; height: 233px;" src="https://bandcamp.com/EmbeddedPlayer/album=552256780/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/flashbacks"&gt;Flashbacks by EMIKA&lt;/a&gt;</iframe>
+
+			<iframe style="border: 0; width: 233px; height: 233px;" src="https://bandcamp.com/EmbeddedPlayer/album=539305556/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/drei"&gt;DREI by EMIKA&lt;/a&gt;</iframe>
+
+			<iframe style="border: 0; width: 233px; height: 233px;" src="https://bandcamp.com/EmbeddedPlayer/album=2485336970/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/klavirni"&gt;Klavirni by EMIKA&lt;/a&gt;</iframe>
+
+			<br><br>
+
+
+			<iframe style="border: 0; width: 233px; height: 233px;" src="https://bandcamp.com/EmbeddedPlayer/album=3634596170/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/forever-never"&gt;Forever Never by EMIKA&lt;/a&gt;</iframe>
+
+
+			<iframe style="border: 0; width: 233px; height: 233px;" src="https://bandcamp.com/EmbeddedPlayer/album=2770821517/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/melancholia-euphoria"&gt;Melancholia Euphoria by EMIKA&lt;/a&gt;</iframe>
+
+			<iframe style="border: 0; width: 233px; height: 233px;" src="http://bandcamp.com/EmbeddedPlayer/album=635676891/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless="">&lt;a href="http://emika-official.bandcamp.com/album/drei-remixes"&gt;DREI - Remixes by EMIKA&lt;/a&gt;</iframe>
+
+			<br><br>
+
+			<iframe src="https://embed.spotify.com/?uri=https://open.spotify.com/user/emikamusic/playlist/5HxXr2e31Q0Sp9jjIbzHEx?si=81DP-4BORNWYTrveHkrr8g" allowtransparency="true" width="350" height="350" frameborder="0"></iframe>
+
+			<iframe src="https://embed.spotify.com/?uri=https://open.spotify.com/user/emikamusic/playlist/6nkuDYjp9VChyyzfyR3qW3?si=KD1tUXVdTi-cviBaGwgc6A" allowtransparency="true" width="350" height="350" frameborder="0"></iframe>
+
+			<br>
+					</section>
+
+					<article>
+
+						<br><div style="font-family: 'Josefin Sans', sans serif;"><a href="http://www.srd.co.uk/">Distributed by SRD</a></div>
+						<br>
+						<br>
+						<div class="links">
+						<div id="main">
+					<a href="http://www.facebook.com/emikamusic" title="Facebook" target="_blank"><img src="EMIKA%20RECORDS_files/facebook.png"></a>
+
+											<a href="http://www.soundcloud.com/emika_official" title="Soundcloud" target="_blank"><img src="EMIKA%20RECORDS_files/soundcloud.png"></a>
+
+											<a href="https://youtu.be/umy5HK5loig" title="YouTube" target="_blank"><img src="EMIKA%20RECORDS_files/youtube.png"></a>
+
+											<a href="http://twitter.com/emika_official" title="Twitter" target="_blank"><img src="EMIKA%20RECORDS_files/twitter.png"></a>
+
+											<a href="https://instagram.com/emika_official/" title="Instagram" target="_blank"><img src="EMIKA%20RECORDS_files/instagram.png"></a>
+
+											<a href="mailto:mail@emikarecords.com" title="Mail"><img src="EMIKA%20RECORDS_files/email.png"></a>
+
+
+										
+												<span class="stretch"></span>
+						</div>
+						</div>
+					</article> 
+				
+
+			<div id="simple-translate-button" style="display: none;"></div><div id="simple-translate-panel" style="display: none;"><p>...</p></div>
+			</div>
+	</main>
 </body>
 </html>

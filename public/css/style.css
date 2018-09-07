@@ -1,31 +1,37 @@
 body, html {
-
     background-color: black;
-
-    background-image: url("/img/Background.jpg");
-    max-height: 100vh;
-    /* Full height */
-
-    /* Center and scale the image nicely */
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
     text-align: center;
 
 
 
 }
 
+@font-face {
+  font-family: emikafont;
+  src: url(Helsinki-Light.otf);
+}
+
+.bg{
+  background-image: url("/img/Background.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  border-width:0px 3vw;
+  border-style:solid;
+  border-color:black;
+}
 
 #par { 
   font-size: 24pt;
   text-shadow: 2px 2px 6px #000000;
-
+  font-family: 'emikafont';
   }
 
 
+
+
 .holder{
-  font-family: 'Pragati Narrow';
   margin: 0 auto;
   overflow: hidden;
   height: 170vh;
