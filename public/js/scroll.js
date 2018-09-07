@@ -2,7 +2,7 @@ $(document).ready(function(){
 		var top=0;
         var inc=1;
         var par = document.getElementById('par')
-        $('#par').hover(function(){inc = 0},function(){ inc=1});
+        $('#par').hover(function(){inc = 0},function(){inc = 1});
 		var scroll = function() {
             top+=inc;
             

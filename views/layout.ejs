@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+		
 
 
 	<link rel="stylesheet" href="css/style.css">
@@ -16,7 +18,7 @@
 
 <body>
 		<main>
-		<div class="bg">
+			<div class="bg">
 			<!-- Scrolling Text -->
 			<div class="holder">
 					<%- body %>
@@ -27,7 +29,7 @@
 			<div class="container-fluid">
 					<div class="row">
 						<div class="col-xs-6" align="right">
-							<img src="/img/write.png" id="myBtn"></img>
+							<img src="/img/write.png" onclick="document.getElementById('id02').style.display = 'block'"></img>
 						</div>
 						<div class="col-xs-6" align="left">
 								<img src="/img/preorder.png" onclick="window.open('http://smarturl.it/EMKCD04')"></img>
@@ -36,15 +38,23 @@
 					<br>
 					<br>
 					<div class="row">
-						<div class="col-xs-4" align="right">
+						<div class="col-sm-3"></div>
+						<div class="col-sm-2">
 								<img src="/img/EmikaRecordsWhite.png" class="img-fluid" alt="">
+								<br>
+								<br>
 						</div>
-						<div class="col-xs-4">
+						<div class="col-sm-2">
 								<img src="/img/Heart.png" class="img-fluid" alt="">
+								<br>
+								<br>
 						</div>
-						<div class="col-xs-4" align="left">
+						<div class="col-sm-2">
 								<img src="/img/HMLogo.png" class="img-fluid" alt="">
+								<br>
+								<br>
 						</div>
+						<div class="col-sm-3"></div>
 					</div>
 			</div>
 			<br>
@@ -52,49 +62,90 @@
 			<br>
 		</div>
 
-			
+		<div class="w3-container">
+				<div id="id01" class="w3-modal">
+					<div class="w3-modal-content">
+							<div class="content">
+									<% if (success.length > 0) { %>
+										<p>Thank You xx</p>
+								<% } else { %>
+							<p>Dear Fans,</p>
+							/s/ /s/
+							<p>Thank you for visiting my page.</p>
+							/s/ /s/
+							<p>I would like to invite you to share your experiences of depression and mental health. You can write anonymously and in your own language.</p>
+							/s/ /s/
+							<p>By pre-ordering my album, you will also be supporting Music Minds Matter, a 24/7 service that helps musicians through tough times.</p>
+							/s/ /s/
+							<p>Thank you for sharing!</p>
+							/s/ /s/
+							<p>Emika ♥</p>
+							<% } %> 
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<!-- Data Entry -->
-			<div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog">
-			<div class="modal-content">
+			<div class="w3-container">
+					<div id="id02" class="w3-modal">
+						<div class="w3-modal-content">
+							<div class="w3-container">
+								<span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+								<form action="/create" method="POST">
 
-			<div class="modal-body" style="padding:5px 5px;">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<form action="/create" method="POST">
-
-						<div class="form-group">
-								<textarea name="confession" rows="10" class="form-control" placeholder="What does the word 'Depression' mean to you?"></textarea>
+									<div class="form-group">
+											<textarea name="confession" rows="10" class="form-control" style="background-color:black; color: green; resize: none; border:0px; overflow: auto;	outline: none; -webkit-box-shadow: none; -moz-box-shadow: none;	box-shadow: none;" placeholder="How does your depression feel?
+Wie fühlt sich deine Depression an?
+Jak się czuje twoja depresja? 
+Как ваша депрессия?
+¿Cómo se siente tu depresión?
+Jaká je tvoje deprese?
+你沮喪時的心境？"></textarea>
+									</div>
+			
+									<div class="form-group">
+									<button type="submit" style="background-color:black; color:green; float: ">Submit</button>
+									</div>
+			
+							</form>
+							</div>
 						</div>
+					</div>
+				</div>
 
-						<div class="form-group">
-						<button type="submit" class="btn btn-success btn-lg">Submit</button>
-						</div>
 
-				</form>
-			</div>
-			</div>
-
-			</div>
-			</div> 
 
 			<!-- Autoscroll -->
 			<script src="/js/scroll.js"></script>
-
-			<!-- Welcome Message -->
-			<script>
-						$(document).ready(function(){
-								$("#myBtn").click(function(){
-										$("#myModal").modal({backdrop: 'static'});
-								});
-						});
-			</script>
-
+	
+		
 			<!-- Page Load Position -->						
 			<script>
 					pos = $(window).height();
 					$('html, body').animate({scrollTop:pos}, "slow");
 			</script>		
 
+<script>
+		$(document).ready(function(){
+			setTimeout(function(){document.getElementById('id01').style.display='block'}, 2000);
+		});
+</script>
+	<script src="/js/typerText.js"></script>
+
+<script>
+			$(document).ready(function(){
+	// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+});
+</script>
 
 			<br>
 			<br>
