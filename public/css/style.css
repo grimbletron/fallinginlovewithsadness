@@ -28,8 +28,6 @@ body, html {
   }
 
 
-
-
 .holder{
   margin: 0 auto;
   overflow: hidden;
@@ -39,10 +37,10 @@ body, html {
   z-index: -1;
 }
 
+
 body.modal-open {
   overflow: visible;
 }
-
 
 .w3-modal{
   font-family: 'Lucida Console', 'Courier New', Courier, monospace;
@@ -53,17 +51,14 @@ body.modal-open {
 .w3-modal-content {
   background-color: black;
   padding:30px;
+  min-height: 450px;
 }
 
-#id01{
-  min-height: 60vh;
-}
 
 #confession{
   border: none;
   overflow: auto;
   outline: none;
-
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;

@@ -9,7 +9,7 @@
 		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
-		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
 
 	<link rel="stylesheet" href="css/style.css">
@@ -22,17 +22,18 @@
 			<!-- Scrolling Text -->
 			<div class="holder">
 					<%- body %>
+					<%- body %>
 				</div>
 		<br>
 		<br>
 			<!-- Images and Buttons -->
-			<div class="container-fluid">
+			<div class="container-fluid images-and-buttons">
 					<div class="row">
 						<div class="col-xs-6" align="right">
-							<img src="/img/write.png" onclick="document.getElementById('id02').style.display = 'block'"></img>
+								<a id="myLink" title="share your story" href="#" onclick="document.getElementById('id02').style.display = 'block';return false;"><img src="/img/write.png"></img></a>
 						</div>
 						<div class="col-xs-6" align="left">
-								<img src="/img/preorder.png" onclick="window.open('http://smarturl.it/EMKCD04')"></img>
+								<a id="myLink" title="preorder" href="#" onclick="window.open('http://smarturl.it/EMKCD04')"><img src="/img/preorder.png"></img></a>
 						</div>
 					</div>
 					<br>
@@ -121,11 +122,14 @@ Jaká je tvoje deprese?
 	
 		
 			<!-- Page Load Position -->						
-			<script>
+		<script>
 					pos = $(window).height();
 					$('html, body').animate({scrollTop:pos}, "slow");
 			</script>		
+	
+<script> 	
 
+		$( "#par" ).appendTo( "#par" );</script>	
 <script>
 		$(document).ready(function(){
 			setTimeout(function(){document.getElementById('id01').style.display='block'}, 2000);
