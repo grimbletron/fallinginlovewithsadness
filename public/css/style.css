@@ -123,6 +123,7 @@ a {
   border: 1px solid #e33e41;
   border-radius: 50%;
   display: inline-block;
+  cursor:pointer;
 }
 
 .close:active {
