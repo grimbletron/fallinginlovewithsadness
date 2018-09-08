@@ -1,5 +1,18 @@
 // SP AMEND: ANIMATION SETTINGS 
 // 
+// UPDATE Set the speed depending on screen width
+var initSpeed = '50';
+var speed = ($('#par').height()/2500) * initSpeed;
+
+//  Change the minimum width of screesize
+function setSpeed(){
+		var speed = ($('#par').height()/1000) * initSpeed ;
+}
+// UPDATE This will change the speed if the size of the window is changed 
+$(window).on('resize', function() {
+	setSpeed();
+});
+
 var introText = new TimelineMax({
 	// Pauses intil the page is loaded
 	paused: true,
@@ -10,9 +23,11 @@ var introText = new TimelineMax({
 	yoyo: false,
 
 });
+
+
 // The timeline
 // NOTE: Change the speed by changing the number after '#par' (seconds)
-introText.fromTo('#par', 30, {
+introText.fromTo('#par', speed, {
 	// Starting position in percent
 	// 5% from top
 	yPercent: 0,
@@ -57,4 +72,4 @@ $('#par').mouseleave(function () {
 	// 	setTimeout(scroll, 25)
 	// }
 	// scroll();
-//});
+//	});
