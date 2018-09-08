@@ -37,24 +37,24 @@
 					</div>
 					<br>
 					<br>
-					<div class="row">
-						<div class="col-sm-3"></div>
-						<div class="col-sm-2">
+					<div class="row" align="center">
+						<div class="col-md-3"></div>
+						<div class="col-md-2">
 								<img src="/img/EmikaRecordsWhite.png" class="img-fluid" alt="">
 								<br>
 								<br>
 						</div>
-						<div class="col-sm-2">
+						<div class="col-md-2" align="center">
 								<img src="/img/Heart.png" class="img-fluid" alt="">
 								<br>
 								<br>
 						</div>
-						<div class="col-sm-2">
+						<div class="col-md-2">
 								<img src="/img/HMLogo.png" class="img-fluid" alt="">
 								<br>
 								<br>
 						</div>
-						<div class="col-sm-3"></div>
+						<div class="col-md-3"></div>
 					</div>
 			</div>
 			<br>
@@ -67,7 +67,7 @@
 						<div class="titlebar">
 								<div class="buttons">
 									<div class="close">
-											<a class="closebutton"  onclick="document.getElementById('id01').style.display='none'" ><span style = "line-height: 9px; vertical-align: 50%;"><strong>x</strong></span></a>
+											<a class="closebutton" onclick="document.getElementById('id01').style.display='none'" ><span style = "line-height: 9px; vertical-align: 50%;"><strong>x</strong></span></a>
 
 									</div>
 								</div>
@@ -103,7 +103,7 @@
 							<div class="titlebar">
 									<div class="buttons">
 										<div class="close">
-												<a class="closebutton"  onclick="document.getElementById('id02').style.display='none'" ><span style = "line-height: 9px; vertical-align: 50%;"><strong>x</strong></span></a>
+												<a class="closebutton2"  onclick="document.getElementById('id02').style.display='none'" ><span style = "line-height: 9px; vertical-align: 50%;"><strong>x</strong></span></a>
 	
 										</div>
 									</div>
@@ -152,6 +152,8 @@ Jaká je tvoje deprese?
 </script>
 	<script src="/js/typerText.js"></script>
 
+	<script>$('closebutton').bind('tap',function() {document.getElementById('id01').style.display='none'});</script>
+	<script>$('closebutton2').bind('tap',function() {document.getElementById('id02').style.display='none'});</script>
 
 			<br>
 			<br>
