@@ -1,3 +1,4 @@
+require('mongoose-query-random');
 const Confession = require('../models/confession');
 
 module.exports = {
@@ -18,7 +19,7 @@ module.exports = {
  */
 function showConfessions(req, res) {
   // get all confessions   
-  Confession.find({ moderated: true}, (err, confessions) => {
+  Confession.find().where('moderated').equals(true).random(20, true, (err, confessions) => {
     if (err) {
       res.status(404);
       res.send('Confessions not found!');
@@ -135,6 +136,7 @@ function processCreate(req, res) {
  * show the edit form
  */
 function showEdit(req, res) {
+  backURL=req.header('Referer');
     Confession.findOne({ _id: req.params.id }, (err, confession) => {
       res.render('pages/edit', {
         confession: confession,
@@ -152,9 +154,10 @@ function processEdit(req, res){
 
     //if there are errors, redirect and save errors to flash
     const errors = req.validationErrors();
+ 
     if(errors){
         req.flash('errors', errors.map(err => err.msg));
-        return res.redirect(`/confessions/${req.params.slug}/edit`);
+        return res.redirect(`/confessions/${req.params.id}/edit`);
     }
     //finding a current confession
     Confession.findOne({ _id: req.params.id }, (err, confession)=>{
@@ -164,7 +167,7 @@ function processEdit(req, res){
                 throw err;
 
         req.flash('success', 'successfully updated confession');
-        res.redirect('/edit');
+        res.redirect(backURL);
         });
     });
 }
@@ -174,8 +177,9 @@ function processEdit(req, res){
  */
 function deleteConfession(req,res) {
     Confession.remove({ _id: req.params.id }, (err)=>{
+      backURL=req.header('Referer');
         req.flash('success', 'Confession deleted');
-        res.redirect('/edit');
+        res.redirect(backURL);
     });
 }
 
