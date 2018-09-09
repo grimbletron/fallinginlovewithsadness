@@ -29,10 +29,10 @@
 			<div class="container-fluid images-and-buttons">
 					<div class="row">
 						<div class="col-xs-6" align="right">
-								<a id="myLink" title="share your story" href="#" onclick="document.getElementById('id02').style.display = 'block';return false;"><img src="/img/write.png"></img></a>
+								<span title="share your story" onclick="document.getElementById('id02').style.display = 'block';return false;" on-tap="document.getElementById('id02').style.display = 'block';return false;"><img class="clickable" src="/img/write.png"></img></span>
 						</div>
 						<div class="col-xs-6" align="left">
-								<a id="myLink" title="preorder" href="#" onclick="window.open('http://smarturl.it/EMKCD04')"><img src="/img/preorder.png"></img></a>
+								<span title="preorder" onclick="window.open('http://smarturl.it/EMKCD04')" on-tap="window.open('http://smarturl.it/EMKCD04')"><img class="clickable" src="/img/preorder.png"></img></span>
 						</div>
 					</div>
 					<br>
@@ -67,7 +67,7 @@
 						<div class="titlebar">
 								<div class="buttons">
 									<div class="close">
-											<a class="closebutton" id="closebutton"  onclick="document.getElementById('id01').style.display='none'" ><span style = "line-height: 9px; vertical-align: 50%; cursor: pointer;"><strong>x</strong></span></a>
+											<a class="closebutton" id="closebutton"  onclick="document.getElementById('id01').style.display='none'" on-tap="document.getElementById('id01').style.display='none'" ><span style = "line-height: 9px; vertical-align: 50%; cursor: pointer;"><strong>x</strong></span></a>
 
 									</div>
 								</div>
@@ -137,7 +137,7 @@ Jaká je tvoje deprese?
 
 
 			<!-- Autoscroll -->
-		//	<script src="/js/scroll.js"></script>
+			<script src="/js/scroll.js"></script>
 	
 		
 			<!-- Page Load Position -->						
